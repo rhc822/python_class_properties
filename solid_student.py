@@ -23,41 +23,61 @@ class Student:
         except AttributeError:
             return 0
 
-    @property
-        def last_name(self):
-            try:
-                return self.__last_name
-            except AttributeError:
-                return 0
+    @first_name.setter
+    def first_name(self, new_first_name):
+        if type(new_first_name) is str:
+            self.__first_name = new_first_name
+        else:
+            raise TypeError("Please provide a string value.")
 
     @property
-        def age(self):
-            try:
-                return self.__age
-            except AttributeError:
-                return 0
+    def last_name(self):
+        try:
+            return self.__last_name
+        except AttributeError:
+            return 0
+
+    @last_name.setter
+    def last_name(self, new_last_name):
+        if type(new_last_name) is str:
+            self.__last_name = new_last_name
+        else:
+            raise TypeError("Please provide a string value.")
 
     @property
-        def last_name(self):
-            try:
-                return self.__cohort_number
-            except AttributeError:
-                return 0
+    def age(self):
+        try:
+            return self.__age
+        except AttributeError:
+            return 0
+
+    @age.setter
+    def age(self, age):
+        if type(new_age) is int:
+            self.__new_age = new_age
+        else:
+            raise TypeError("Please provide an integer value.")
 
     @property
-        def last_name(self):
-            try:
-                return self.__full_name
-            except AttributeError:
-                return 0
+    def cohort_number(self):
+        try:
+            return self.__cohort_number
+        except AttributeError:
+            return 0
 
+    @property
+    def full_name(self):
+        try:
+            return self.__full_name
+        except AttributeError:
+            return 0
 
-x = Student("John")
-print(x.first_name)
-x.first_name = "bob"
-
-# x.first_name = "Bob"
-
+a = Student()
+a.first_name = "Ryan"
+a.last_name = "Cunningham"
+a.
+print(a.first_name, a.last_name)
+#a.first_name = 123
 
 
 #for prop, value in x.__dict__.items():

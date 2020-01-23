@@ -12,7 +12,7 @@ class Student:
     def __init__(self):
         self.__first_name = ""
         self.__last_name = ""
-        self.__age = int()
+        self.__age = 0
         self.__cohort_number = int()
         self.__full_name = ""
 
@@ -52,9 +52,9 @@ class Student:
             return 0
 
     @age.setter
-    def age(self, age):
+    def age(self, new_age):
         if type(new_age) is int:
-            self.__new_age = new_age
+            self.__age = new_age
         else:
             raise TypeError("Please provide an integer value.")
 
@@ -65,19 +65,27 @@ class Student:
         except AttributeError:
             return 0
 
+    @cohort_number.setter
+    def cohort_number(self, new_cohort_number):
+        if type(new_cohort_number) is int:
+            self.__cohort_number = new_cohort_number
+        else:
+            raise TypeError("Please provide an integer value.")
+
     @property
     def full_name(self):
         try:
-            return self.__full_name
+            return f"{self.__first_name} {self.__last_name}"
         except AttributeError:
             return 0
+
 
 a = Student()
 a.first_name = "Ryan"
 a.last_name = "Cunningham"
-a.
-print(a.first_name, a.last_name)
-#a.first_name = 123
+a.age = 3
+a.cohort_number = 12
+print(f" {a.first_name}\n {a.last_name}\n {a.age}\n {a.cohort_number}\n {a.full_name}")
 
 
 #for prop, value in x.__dict__.items():
